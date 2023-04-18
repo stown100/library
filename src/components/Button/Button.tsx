@@ -16,7 +16,7 @@ const Button = (props: ButtonProps) => {
   if (size === "large") {
     rootClass.push("large");
   } else if (size === "small") {
-    rootClass.push("samll");
+    rootClass.push("small");
   }
 
   // typebtn

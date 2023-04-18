@@ -9,7 +9,7 @@ export default {
   argTypes: {
     size: {
       type: "string",
-      description: "Button sizes",
+      description: "Set the size of Button",
       defaultValue: "medium",
       options: ["medium", "small", "large"],
       control: {

@@ -9,7 +9,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { label, size, typebtn } = props;
+  const { label, size, typebtn, href } = props;
   const rootClass = ["btn"];
 
   // size
@@ -34,14 +34,18 @@ const Button = (props: ButtonProps) => {
     rootClass.push("success");
   }
 
-  return (
+  return typebtn !== "link" ? (
     <button
       disabled={typebtn === "disabled"}
       className={rootClass.join(" ")}
-      {...props}
+      {...{ label, size, typebtn }}
     >
       {label}
     </button>
+  ) : (
+    <a {...{ href }} className={rootClass.join(" ")}>
+      {label}
+    </a>
   );
 };
 

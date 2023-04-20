@@ -9,7 +9,7 @@ export default {
   argTypes: {
     size: {
       type: "string",
-      description: "Set the size of Dropdown",
+      description: "Set the size of Tooltip",
       defaultValue: "medium",
       options: ["medium", "small", "large"],
       control: {
@@ -29,5 +29,5 @@ export const MyTooltip = Template.bind({});
 MyTooltip.args = {
   label: "Tooltip",
   size: "medium",
-  content: "Dropdown textDropdown",
+  content: "Tooltip text content",
 };

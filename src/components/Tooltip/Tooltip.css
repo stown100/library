@@ -1,0 +1,130 @@
+/* .component {
+  width: 100%;
+  height: 100vh;
+}
+
+.tooltip-component {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  width: 200px;
+}
+
+.tooltip {
+  width: 100%;
+  border: 0;
+  background-color: #1976d2;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 7px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.tooltip:hover {
+  background-color: #1767b6;
+}
+
+.small {
+  font-size: 12px;
+  padding: 3px 5px;
+}
+
+.large {
+  font-size: 24px;
+  padding: 7px 14px;
+}
+
+.window {
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  background-color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 16px);
+  height: calc(100% - 10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.tooltip-component:hover .window {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.windowTop {
+  margin: 0 0 10px;
+  left: 0;
+  bottom: 100%;
+}
+
+.windowRight {
+  margin: 0 0 0 10px;
+  left: 100%;
+  top: 0;
+}
+
+.windowBottom {
+  margin: 10px 0 0;
+  left: 0;
+  top: 100%;
+}
+
+.windowLeft {
+  margin: 0 10px 0 0;
+  left: -104%;
+  top: 0;
+}
+
+.windowContent {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+
+.arrowBottom {
+  border-bottom: 0;
+  left: calc(50% - 8px);
+  bottom: -8px;
+  border-top-color: #ffffff;
+}
+
+.arrowTop {
+  border-top: 0;
+  left: calc(50% - 8px);
+  top: -7px;
+  border-bottom-color: #ffffff;
+}
+
+.arrowLeft {
+  border-left: 0;
+  top: calc(50% - 8px);
+  left: -7px;
+  border-right-color: #ffffff;
+}
+
+.arrowRight {
+  border-right: 0;
+  top: 6px;
+  right: -7px;
+  border-left-color: #ffffff;
+} */

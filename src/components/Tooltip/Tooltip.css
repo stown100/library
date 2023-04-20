@@ -1,13 +1,12 @@
-/* .component {
+.component {
   width: 100%;
   height: 100vh;
 }
 
-.tooltip-component {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
+.tooltipComponent {
   width: 200px;
+  position: relative;
+  height: fit-content;
 }
 
 .tooltip {
@@ -38,93 +37,109 @@
   font-size: 24px;
   padding: 7px 14px;
 }
-
-.window {
-  position: absolute;
+.windowTooltip {
+  position: relative;
   font-family: "Inter", sans-serif;
   text-align: center;
   font-size: 12px;
-  background-color: #ffffff;
-  padding: 5px 8px;
-  border-radius: 4px;
-  max-width: 250px;
+  padding: 0;
+  max-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 16px);
-  height: calc(100% - 10px);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s ease-in-out;
+  width: 100%;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.tooltip-component:hover .window {
-  visibility: visible;
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-}
-
-.windowTop {
-  margin: 0 0 10px;
+.windowTooltipTop {
+  position: absolute;
+  margin: 0;
   left: 0;
   bottom: 100%;
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
 }
 
-.windowRight {
-  margin: 0 0 0 10px;
+.windowTooltipRight {
+  position: absolute;
+  margin: 0;
   left: 100%;
   top: 0;
+  height: 100%;
+  border-left: 10px solid rgba(0, 0, 0, 0);
 }
 
-.windowBottom {
-  margin: 10px 0 0;
+.windowTooltipBottom {
+  margin: 0;
   left: 0;
   top: 100%;
+  height: calc(100% - 10px);
+  border-top: 10px solid rgba(0, 0, 0, 0);
 }
 
-.windowLeft {
-  margin: 0 10px 0 0;
+.windowTooltipLeft {
+  position: absolute;
+  margin: 0;
   left: -104%;
   top: 0;
+  height: 100%;
+  border-right: 10px solid rgba(0, 0, 0, 0);
 }
 
-.windowContent {
+.windowTooltipContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
+  color: #000000;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #ffffff;
+  padding: 0 8px;
+  border-radius: 4px;
+  width: 200px;
 }
 
-.arrow {
+.windowTooltipContentBottom {
+  padding: 5px 0;
+}
+
+.windowTooltipContentTop {
+  padding: 5px 0;
+}
+
+.arrowTooltip {
   position: absolute;
   width: 0;
   height: 0;
   border: 8px solid transparent;
 }
 
-.arrowBottom {
+.arrowTooltipBottom {
   border-bottom: 0;
   left: calc(50% - 8px);
   bottom: -8px;
   border-top-color: #ffffff;
 }
 
-.arrowTop {
+.arrowTooltipTop {
   border-top: 0;
   left: calc(50% - 8px);
   top: -7px;
   border-bottom-color: #ffffff;
 }
 
-.arrowLeft {
+.arrowTooltipLeft {
   border-left: 0;
   top: calc(50% - 8px);
   left: -7px;
   border-right-color: #ffffff;
 }
 
-.arrowRight {
+.arrowTooltipRight {
   border-right: 0;
-  top: 6px;
+  top: calc(50% - 8px);
   right: -7px;
   border-left-color: #ffffff;
-} */
+}

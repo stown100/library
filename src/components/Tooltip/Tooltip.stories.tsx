@@ -16,15 +16,6 @@ export default {
         type: "radio",
       },
     },
-    windowposition: {
-      type: "string",
-      description: "Dropdown window position",
-      defaultValue: "medium",
-      options: ["windowTop", "windowRight", "windowBottom", "windowLeft"],
-      control: {
-        type: "radio",
-      },
-    },
   },
 } as ComponentMeta<typeof Tooltip>;
 
@@ -38,6 +29,5 @@ export const MyTooltip = Template.bind({});
 MyTooltip.args = {
   label: "Tooltip",
   size: "medium",
-  windowposition: "windowTop",
   content: "Dropdown textDropdown",
 };

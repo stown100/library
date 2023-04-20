@@ -33,7 +33,6 @@ const Dropdown = (props: ButtonProps) => {
               return prev;
             }
           });
-          console.log("left");
         } else if (containerRect.right > windowWidth) {
           setPositionMessage((prev) => {
             if (Array.isArray(prev) && !prev.includes("right")) {
@@ -42,7 +41,6 @@ const Dropdown = (props: ButtonProps) => {
               return prev;
             }
           });
-          console.log("right");
         }
         if (containerRect.top < 0) {
           setPositionMessage((prev) => {
@@ -52,7 +50,6 @@ const Dropdown = (props: ButtonProps) => {
               return prev;
             }
           });
-          console.log("top");
         } else if (containerRect.bottom > windowHeight) {
           setPositionMessage((prev) => {
             if (Array.isArray(prev) && !prev.includes("bottom")) {
@@ -61,7 +58,6 @@ const Dropdown = (props: ButtonProps) => {
               return prev;
             }
           });
-          console.log("bottom");
         }
       }
     }
@@ -99,8 +95,6 @@ const Dropdown = (props: ButtonProps) => {
   } else if (size === "small") {
     rootClass.push("small");
   }
-
-  console.log(positionMessage);
 
   if (!!positionMessage) {
     rootClassWindow.push("windowTop");

@@ -149,7 +149,10 @@ const Tooltip = (props: TooltipProps) => {
         target.className.split(" ").includes("windowTooltipTop") ||
         target.className.split(" ").includes("tooltip") ||
         target.className.split(" ").includes("windowTooltipContent") ||
-        target.className.split(" ").includes("arrowTooltip")
+        target.className.split(" ").includes("arrowTooltip") ||
+        target.parentElement?.className
+          .split(" ")
+          .includes("windowTooltipContent")
       ) {
         setHoverDropdown(true);
       } else {
@@ -173,7 +176,7 @@ const Tooltip = (props: TooltipProps) => {
         {tooltipElement}
         {hoverDropdown && (
           <div className={rootClassWindowTooltip.join(" ")} ref={containerRef}>
-            {child}
+            <div className={rootClassWindowContent.join(" ")}>{children}</div>
             <div className={rootClassArrowTooltip.join(" ")}></div>
           </div>
         )}

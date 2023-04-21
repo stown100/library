@@ -171,7 +171,7 @@ const Tooltip = (props: TooltipProps) => {
     <div className="component">
       <div className="tooltipComponent">
         {tooltipElement}
-        {hoverDropdown && children && (
+        {hoverDropdown && (
           <div className={rootClassWindowTooltip.join(" ")} ref={containerRef}>
             {child}
             <div className={rootClassArrowTooltip.join(" ")}></div>

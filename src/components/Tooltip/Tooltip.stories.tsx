@@ -16,6 +16,14 @@ export default {
         type: "radio",
       },
     },
+    element: {
+      description: "The DOM container, the default behavior is to button",
+      defaultValue: "button",
+    },
+    children: {
+      description: "The DOM container, the default behavior is to span",
+      defaultValue: "span",
+    },
   },
 } as ComponentMeta<typeof Tooltip>;
 
@@ -27,7 +35,7 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 export const MyTooltip = Template.bind({});
 // больше про args: https://storybook.js.org/docs/react/writing-stories/args
 MyTooltip.args = {
-  label: "Tooltip",
+  element: <button>Tooltip</button>,
   size: "medium",
-  content: "Tooltip text content",
+  children: <span>Tooltip text content</span>,
 };

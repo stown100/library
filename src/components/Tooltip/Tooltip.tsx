@@ -1,15 +1,16 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./Tooltip.css";
+import { cloneElement } from "./cloneElement";
 
 export interface TooltipProps {
-  label: string;
+  element: React.ReactElement<any>;
   size?: string;
-  content?: string;
+  children: React.ReactElement<any>;
 }
 
 const Tooltip = (props: TooltipProps) => {
-  const containerRef = useRef<HTMLInputElement>(null);
-  const { label, size, content } = props;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { element, size, children } = props;
   const rootClass = ["tooltip"];
   let rootClassWindowTooltip = ["windowTooltip"];
   let rootClassArrowTooltip = ["arrowTooltip"];
@@ -18,7 +19,7 @@ const Tooltip = (props: TooltipProps) => {
   const [hoverDropdown, setHoverDropdown] = useState(false);
 
   useLayoutEffect(() => {
-    if (content) {
+    if (children) {
       const container = containerRef.current;
 
       if (container) {
@@ -158,15 +159,21 @@ const Tooltip = (props: TooltipProps) => {
     document.addEventListener("mouseover", handleHoverTooltip);
   }, []);
 
+  const tooltipElement = cloneElement(element, {
+    className: rootClass.join(" "),
+    size: { ...{ size } },
+  });
+  const child = cloneElement(children, {
+    className: rootClassWindowContent.join(" "),
+  });
+
   return (
     <div className="component">
       <div className="tooltipComponent">
-        <button className={rootClass.join(" ")} {...{ size }}>
-          {label}
-        </button>
-        {hoverDropdown && content && (
+        {tooltipElement}
+        {hoverDropdown && children && (
           <div className={rootClassWindowTooltip.join(" ")} ref={containerRef}>
-            <span className={rootClassWindowContent.join(" ")}>{content}</span>
+            {child}
             <div className={rootClassArrowTooltip.join(" ")}></div>
           </div>
         )}

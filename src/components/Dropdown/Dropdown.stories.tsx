@@ -16,6 +16,10 @@ export default {
         type: "radio",
       },
     },
+    children: {
+      description: "The DOM container, the default behavior is to span",
+      defaultValue: "span",
+    },
   },
 } as ComponentMeta<typeof Dropdown>;
 
@@ -29,5 +33,5 @@ export const MyDropdown = Template.bind({});
 MyDropdown.args = {
   label: "Dropdown",
   size: "medium",
-  content: "Dropdown textDropdown text Dropdown text Dropdown text vDropdown text Dropdown text Dropdown textDropdown textDropdown text",
+  children: <span>Dropdown text</span>,
 };

@@ -1,23 +1,27 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./Dropdown.css";
+import { cloneElement } from "./cloneElement";
 
 export interface ButtonProps {
   label: string;
   size?: string;
-  content?: string;
+  children: React.ReactElement<any>;
 }
 
 const Dropdown = (props: ButtonProps) => {
   const containerRef = useRef<HTMLInputElement>(null);
-  const { label, size, content } = props;
+  const { label, size, children } = props;
   const rootClass = ["dropdown"];
   let rootClassWindow = ["window"];
   let rootClassArrow = ["arrow"];
   const [clickDropdown, setClickDropdown] = useState(false);
   const [positionMessage, setPositionMessage] = useState<string[]>([]);
+  const child = cloneElement(children, {
+    className: "windowContent",
+  });
 
   useLayoutEffect(() => {
-    if (clickDropdown && content) {
+    if (clickDropdown && children) {
       const container = containerRef.current;
 
       if (container) {
@@ -165,9 +169,9 @@ const Dropdown = (props: ButtonProps) => {
         <button className={rootClass.join(" ")} {...{ size }}>
           {label}
         </button>
-        {clickDropdown && content && (
+        {clickDropdown && (
           <div className={rootClassWindow.join(" ")} ref={containerRef}>
-            <span className="windowContent">{content}</span>
+            {child}
             <div className={rootClassArrow.join(" ")}></div>
           </div>
         )}
